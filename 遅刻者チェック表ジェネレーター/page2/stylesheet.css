@@ -1,0 +1,101 @@
+@keyframes loading-animation2{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+@keyframes border_anim {
+  0%{
+    width: 0%;
+  }
+  33%{
+    width: 10%;
+  }
+  66%{
+    width: 40%
+  }
+  100%{
+    width: 80%;
+  }
+}
+
+html {
+  background: url(../background.png) no-repeat;
+  background-position: center;
+  background-size: 250vh;
+  animation-duration: 2s;
+  font-family: 'メイリオ';
+}
+
+html,body{
+  height: 99%;
+}
+
+body .menu {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  padding: 5% 10%;
+  box-sizing: border-box;
+  height: 100%;
+  margin: 0%;
+}
+
+body .menu {
+  animation-name: loading-animation2;
+  animation-duration: 1s;
+}
+
+body h1 {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  position: relative;
+  font-size: 4vw;
+  padding: 0% 0%;
+  box-sizing: border-box;
+  height: 70%;
+}
+
+body h1:before{
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  border-bottom: solid 2px green;
+  transform: translateX(-50%);
+  animation: border_anim 1.5s linear forwards;
+}
+
+.grade {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
+  height: 100%;
+  animation-name: loading-animation2;
+  animation-duration: 2s;
+}
+
+.btn{
+  display: inline-block;
+  height: 40%;
+  width: 70%;
+  font-size: 3vw;
+  text-align: center;
+  background-color: #9ec34b;
+  color: #FFF;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0%;
+  border-radius: 4px;
+  position: relative;
+  box-sizing: border-box;
+  transition: .2s;
+}
+
+.btn:hover {
+  background-color: #aed35b;
+}

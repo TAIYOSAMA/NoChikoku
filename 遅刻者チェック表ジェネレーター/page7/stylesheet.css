@@ -1,0 +1,106 @@
+@keyframes loading-animation1{
+  0%{
+    background-size: 400vh;
+    background-position: center;
+  }
+  100%{
+    background-size: 250vh;
+    background-position: center;
+  }
+}
+
+@keyframes loading-animation2{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+@keyframes border_anim {
+  0%{
+    width: 0%;
+  }
+  33%{
+    width: 10%;
+  }
+  66%{
+    width: 40%
+  }
+  100%{
+    width: 80%;
+  }
+}
+
+html {
+  background: url(../background.png) no-repeat;
+  background-position: center;
+  animation-name: loading-animation1;
+  background-size: 250vh;
+  animation-duration: 2s;
+  font-family: 'メイリオ';
+}
+
+body{
+  animation-name: loading-animation2;
+  animation-duration: 1s;
+}
+
+html,body {
+  height: 99%;
+}
+
+body {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  padding: 5% 10%;
+  box-sizing: border-box;
+}
+
+body h1 {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  position: relative;
+  font-size: 4vw;
+  padding: 5% 5%;
+  box-sizing: border-box;
+}
+
+body h1:before{
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  border-bottom: solid 2px green;
+  transform: translateX(-50%);
+  animation: border_anim 1.5s linear forwards;
+}
+
+.btn {
+  display: grid;
+  place-items: center;
+}
+
+.btn a {
+  display: inline-block;
+  height: 30%;
+  width: 30%;
+  font-size: 3vw;
+  text-align: center;
+  background-color: #9ec34b;
+  color: #FFF;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 4px;
+  position: relative;
+  box-sizing: border-box;
+  transition: .2s;
+}
+
+.btn a:hover {
+  background-color: #aed35b;
+}

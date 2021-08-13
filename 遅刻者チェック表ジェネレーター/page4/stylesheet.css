@@ -1,0 +1,105 @@
+@keyframes loading-animation2{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+@keyframes border_anim {
+  0%{
+    width: 0%;
+  }
+  33%{
+    width: 10%;
+  }
+  66%{
+    width: 40%
+  }
+  100%{
+    width: 80%;
+  }
+}
+
+html {
+  background: url(../background.png) no-repeat;
+  background-position: center;
+  background-size: 250vh;
+  animation-duration: 2s;
+  font-family: 'メイリオ';
+}
+
+html,body {
+  height: 99%;
+}
+
+body {
+  display: grid;
+  grid-template-rows: 1fr 3fr;
+  padding: 0% 10%;
+  box-sizing: border-box;
+  height: 100%;
+  margin: 0%;
+}
+
+body {
+  animation-name: loading-animation2;
+  animation-duration: 1s;
+}
+
+body h1 {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  position: relative;
+  font-size: 4vw;
+  padding: 0% 0%;
+  box-sizing: border-box;
+  height: 70%;
+}
+
+body h1:before{
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  border-bottom: solid 2px green;
+  transform: translateX(-50%);
+  animation: border_anim 1.5s linear forwards;
+}
+
+.select_menu {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  height: 100%;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  height: 100%;
+  place-items: center;
+}
+
+.btn {
+  display: inline-block;
+  height: 70%;
+  width: 80%;
+  font-size: 3vw;
+  text-align: center;
+  background-color: #9ec34b;
+  color: #FFF;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 4px;
+  position: relative;
+  box-sizing: border-box;
+  transition: .2s;
+}
+
+.btn:hover {
+  background-color: #aed35b;
+}
